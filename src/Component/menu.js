@@ -13,7 +13,7 @@ function Cabecalho() {
 					data-toggle="collapse"
 					data-target="#webmenu"
 				>
-					<span class="navbar-toggler-icon"></span>
+					<span className="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="webmenu">
 					<ul className="navbar-nav ml-auto">

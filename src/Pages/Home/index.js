@@ -1,87 +1,66 @@
 import React, { Component } from "react";
 import Cabecalho from "../../Component/menu";
 import Rodape from "../../Component/rodape";
+import books from "../Books/books";
+//import DescriptionBook from "../DescriptionBook";
+import "./style.css";
 
 class Home extends Component {
+	carrinho = [];
+	isLoaded = false;
+	componentDidMount(){
+
+	}
+	maisInformacoes = (id) => {
+		//<DescriptionBook id={id}/>
+	}
+	comprar = (item) => {
+		this.carrinho[item] = item;
+		this.isLoaded = true;
+	}
 	render() {
 		return (
 			<div>
 				<Cabecalho />
-				<div>
-					<div className="carousel slide" data-ride="carousel">
-						<div className="carousel-inner">
-							<div className="carousel-item active">
-								<img
-									src={require("../../img/o temor do sabio.png")}
-									class="d-block w-45"
-									alt="..."
-								/>
-								<p>
-									O temor do sabio
-									<br />
-									Um sabio uma vez disse, apenas três coisas se deve temer,
-									<br />
-									1 um mar em tormenta
-									<br />
-									2 uma noite sem luar
-									<br />
-									3 a furia de um homem gentil
-									<br />
-								</p>
-							</div>
-							<div className="carousel-item">
-								<img
-									src={require("../../img/a musica do silencio.png")}
-									class="d-block w-45"
-									alt="..."
-								/>
-								<p>
-									A musica do silencio
-									<br />
-									Um sabio uma vez disse, apenas três coisas se deve temer,
-									<br />
-									1 um mar em tormenta
-									<br />
-									2 uma noite sem luar
-									<br />
-									3 a furia de um homem gentil
-									<br />
-								</p>
-							</div>
-							<div className="carousel-item">
-								<img
-									src={require("../../img/o nome do vento.png")}
-									class="d-block w-45"
-									alt="..."
-								/>
-								<p>
-									O nome do vento
-									<br />
-									Um sabio uma vez disse, apenas três coisas se deve temer,
-									<br />
-									1 um mar em tormenta
-									<br />
-									2 uma noite sem luar
-									<br />
-									3 a furia de um homem gentil
-									<br />
-								</p>
-							</div>
-						</div>
-					</div>
-					<div className="container lista-livros">
-						<div className="jumbotron">
-							<h3>Melhores da Semana:</h3>
-							<p>
-								<ul>
-									<li>Guerra dos Tronos</li>
-									<li>Percy Jackson</li>
-									<li>O nome do Vento</li>
-								</ul>
-							</p>
+				<br />
+				<div className="main">
+					<div className="container">
+						<h3>Livros:</h3><br />
+						<div className="row">
+							{books.map(it => (
+								<div className="container col-3 listView">
+									<div className="livro">
+										<img
+											src={require("../../img/"+it.nome+".png")}
+											alt=" "
+											className="capa-livro"
+											key={it.id}
+											onClick={() => this.maisInformacoes(it.id)}
+										/>
+									</div>
+									<div className="container">
+										<strong 
+											className="text-capitalize d-inline-block text-truncate" 
+											id="titulo"
+										>{it.nome}</strong><br />
+										<small className="text-capitalize">{it.autor} - {it.lancamento}</small>
+										<br/><br/>
+										<strong>R$: {it.preco}</strong>
+										<br/><br/>
+										<button 
+											key={it.id} 
+											className="btn btn-outline-warning btn-lg btn-block" 
+											onClick={() => this.comprar(it.id)}
+										>
+											Comprar
+										</button>
+									</div>
+								</div>
+							))}
 						</div>
 					</div>
 				</div>
+				<br />
 				<Rodape />
 			</div>
 		);
