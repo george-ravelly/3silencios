@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Cabecalho from "../../Component/menu";
-import Rodape from "../../Component/rodape";
 import books from "../Books/books";
 //import DescriptionBook from "../DescriptionBook";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 class Home extends Component {
@@ -11,32 +10,31 @@ class Home extends Component {
 	componentDidMount(){
 
 	}
-	maisInformacoes = (id) => {
-		//<DescriptionBook id={id}/>
-	}
+
 	comprar = (item) => {
-		this.carrinho[item] = item;
+		this.carrinho.push(item);
+		console.log(this.carrinho);
 		this.isLoaded = true;
 	}
+
 	render() {
 		return (
 			<div>
-				<Cabecalho />
-				<br />
 				<div className="main">
 					<div className="container">
 						<h3>Livros:</h3><br />
 						<div className="row">
 							{books.map(it => (
-								<div className="container col-3 listView">
+								<div className="container col-12 col-md-3 listView">
 									<div className="livro">
+										<Link to={`/DescripitionBook/${it.id}`}>
 										<img
 											src={require("../../img/"+it.nome+".png")}
 											alt=" "
 											className="capa-livro"
 											key={it.id}
-											onClick={() => this.maisInformacoes(it.id)}
 										/>
+										</Link>
 									</div>
 									<div className="container">
 										<strong 
@@ -60,8 +58,6 @@ class Home extends Component {
 						</div>
 					</div>
 				</div>
-				<br />
-				<Rodape />
 			</div>
 		);
 	}
