@@ -24,14 +24,14 @@ function Cabecalho() {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<a href=" " className="nav-link">
+							<Link to={`/contato`} className="nav-link">
 								Contato
-							</a>
+							</Link>
 						</li>
 						<li className="nav-item">
-							<a href=" " className="nav-link">
-								Sobre
-							</a>
+							<Link to={`/sobre`} className="nav-link">
+								sobre
+							</Link>
 						</li>
 					</ul>
 				</div>

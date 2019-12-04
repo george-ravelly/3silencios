@@ -1,10 +1,11 @@
 import React from "react";
+import "./style.css"
 
 function Rodape() {
 
     return(
-        <footer className="py-4 bg-dark text-white-50 footer-fixed-bottom">
-			<div className="container text-center fixed">
+        <footer className="fixed-bottom py-4 bg-dark text-white-50">
+			<div className="container text-center">
 				<small>Copyright &copy; George</small>
 			</div>
 		</footer>
