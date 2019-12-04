@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import books from "../Books/books";
 import "./style.css";
 class DescriptionBook extends Component{
+    carrinho = [];
+	isLoaded = false;
+	comprar = (item) => {
+		this.carrinho.push(item);
+		this.isLoaded = true;
+	}
     render(){
         const id = this.props.match.params.id;
         const it = books.filter(l => l.id === id);
@@ -29,6 +35,7 @@ class DescriptionBook extends Component{
                         <button 
                             key={it.id} 
                             className="btn btn-outline-warning btn-lg btn-block" 
+                            onClick={this.comprar(it.id)}
                         >
                             Comprar
                         </button>

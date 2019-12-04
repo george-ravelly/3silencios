@@ -9,7 +9,6 @@ class AllBooks extends Component {
 	isLoaded = false;
 	comprar = (item) => {
 		this.carrinho.push(item);
-		console.log(this.carrinho);
 		this.isLoaded = true;
 	}
 	render() {
