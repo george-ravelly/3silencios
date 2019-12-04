@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AllBooks from "./Pages/AllBooks";
 import Home from "./Pages/Home";
 import Cabecalho from "./Component/cabecalho";
 import Rodape from "./Component/rodape";
@@ -14,6 +15,7 @@ class App extends Component {
 					<Switch>
 						<Route exact path="/listBooks"component={DescriptionBook} />
 						<Route path="/listBooks/:id" component={DescriptionBook} />
+						<Route exact path="/allBooks" component={AllBooks} />
 						<Route exact path="/" component={Home} />
 					</Switch>
 					<Rodape />

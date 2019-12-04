@@ -19,14 +19,9 @@ function Cabecalho() {
 				<div className="collapse navbar-collapse" id="webmenu">
 					<ul className="navbar-nav ml-auto">
 						<li className="nav-item">
-							<a href=" " className="nav-link">
-								Lançamentos
-							</a>
-						</li>
-						<li className="nav-item">
-							<a href=" " className="nav-link">
+							<Link to={`/allBooks`} className="nav-link">
 								Todos os Livros
-							</a>
+							</Link>
 						</li>
 						<li className="nav-item">
 							<a href=" " className="nav-link">
