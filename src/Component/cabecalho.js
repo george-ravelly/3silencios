@@ -1,13 +1,14 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Cabecalho() {
 	return (
 		<header>
 			<nav className="navbar navbar-dark bg-dark navbar-expand-sm">
-				<img src={require("../img/ler.png")} width="45" alt=" " />
-				<a href="a" className="navbar-brand">
+				
+				<Link to="/" className="navbar-brand">
+					<img src={require("../img/ler.png")} width="45" alt=" " />
 					3Silencios
-				</a>
+				</Link>
 				<button
 					className="navbar-toggler"
 					data-toggle="collapse"
@@ -18,22 +19,22 @@ function Cabecalho() {
 				<div className="collapse navbar-collapse" id="webmenu">
 					<ul className="navbar-nav ml-auto">
 						<li className="nav-item">
-							<a href="a" className="nav-link">
+							<a href=" " className="nav-link">
 								Lançamentos
 							</a>
 						</li>
 						<li className="nav-item">
-							<a href="a" className="nav-link">
+							<a href=" " className="nav-link">
 								Todos os Livros
 							</a>
 						</li>
 						<li className="nav-item">
-							<a href="a" className="nav-link">
+							<a href=" " className="nav-link">
 								Contato
 							</a>
 						</li>
 						<li className="nav-item">
-							<a href="a" className="nav-link">
+							<a href=" " className="nav-link">
 								Sobre
 							</a>
 						</li>

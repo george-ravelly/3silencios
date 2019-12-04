@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Home from "./Pages/Home";
-import Cabecalho from "./Component/menu";
+import Cabecalho from "./Component/cabecalho";
 import Rodape from "./Component/rodape";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import DescriptioBook from "./Pages/DescriptionBook";
+import DescriptionBook from "./Pages/DescriptionBook";
 
 class App extends Component {
 	render() {
@@ -12,9 +12,9 @@ class App extends Component {
 				<div>
 					<Cabecalho />
 					<Switch>
-						<Route path="/listBooks" exact component={DescriptioBook} />
-						<Route path="/listBooks/:id" component={DescriptioBook} />
-						<Route path="/" exact component={Home} />
+						<Route exact path="/listBooks"component={DescriptionBook} />
+						<Route path="/listBooks/:id" component={DescriptionBook} />
+						<Route exact path="/" component={Home} />
 					</Switch>
 					<Rodape />
 				</div>

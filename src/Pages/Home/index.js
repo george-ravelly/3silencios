@@ -7,16 +7,11 @@ import "./style.css";
 class Home extends Component {
 	carrinho = [];
 	isLoaded = false;
-	componentDidMount(){
-
-	}
-
 	comprar = (item) => {
 		this.carrinho.push(item);
 		console.log(this.carrinho);
 		this.isLoaded = true;
 	}
-
 	render() {
 		return (
 			<div>
@@ -27,13 +22,13 @@ class Home extends Component {
 							{books.map(it => (
 								<div className="container col-12 col-md-3 listView">
 									<div className="livro">
-										<Link to={`/DescripitionBook/${it.id}`}>
-										<img
-											src={require("../../img/"+it.nome+".png")}
-											alt=" "
-											className="capa-livro"
-											key={it.id}
-										/>
+										<Link to={`/listBookso/${it.id}`}>
+											<img
+												src={require("../../img/"+it.nome+".png")}
+												alt=" "
+												className="capa-livro"
+												key={it.id}
+											/>
 										</Link>
 									</div>
 									<div className="container">
