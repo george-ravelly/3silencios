@@ -41,7 +41,9 @@ class Home extends Component{
                     </a>
                 </div>
                 </div>
-                <Lancamento />
+                <section>
+                    <Lancamento />
+                </section>
             </main>
         )
     }
