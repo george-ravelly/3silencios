@@ -28,10 +28,12 @@ class DescriptionBook extends Component{
                             id="titulo"
                         >{it[0].nome}</strong><br />
                         <small>{it[0].autor}</small><br />
-                        <p>
-                            <strong>Descrição</strong><br/>
-                            {it[0].descricao}
-                        </p>
+			<section>
+				<p>
+				    <strong>Descrição</strong><br/>
+				    {it[0].descricao}
+				</p>
+			</section>
                         <button 
                             key={it.id} 
                             className="btn btn-outline-warning btn-lg btn-block" 
