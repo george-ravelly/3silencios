@@ -5,7 +5,7 @@ class Home extends Component{
 
     render(){
         return(
-            <div>
+            <main>
                 <div className="container banner">
                 <div id="carouselExampleControls" className="carousel slide banner" data-ride="carousel">
                     <div className="carousel-inner">
@@ -40,9 +40,9 @@ class Home extends Component{
                         <span className="sr-only">Next</span>
                     </a>
                 </div>
-            </div>
+                </div>
                 <Lancamento />
-            </div>
+            </main>
         )
     }
 }
